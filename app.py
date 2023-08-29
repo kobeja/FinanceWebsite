@@ -99,7 +99,7 @@ def buy():
                     time = now.strftime("%d/%m/%Y %H:%M:%S")
                     db.execute("INSERT INTO history (id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)",
                                session["user_id"], stock["symbol"], int(request.form.get("shares")), usd(stock["price"]), time)
-                    db.execute(s INTO stocks (id, name, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?, ?)",
+                    db.execute("INSERT INTO stocks (id, name, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?, ?)",
                                session["user_id"], stock["name"], stock["symbol"], int(request.form.get("shares")), stock["price"], stock["price"] * int(request.form.get("shares")))
 
                 # update user's cash since they just bought some stocks
